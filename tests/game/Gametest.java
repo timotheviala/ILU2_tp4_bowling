@@ -24,4 +24,12 @@ public class Gametest {
 		}
 		assertEquals(game.score(), 0);
 	}
+	
+	@Test
+	void testLancersUn() {
+		for(int i=0;i<20;i++) {
+			game.roll(1);
+		}
+		assertEquals(game.score(), 20);
+	}
 }
