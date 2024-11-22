@@ -35,9 +35,12 @@ public class Gametest {
 	
 	@Test
 	void testDifferentsLancers() {
-		game.roll(6);
-		game.roll(7);
-		game.roll(2);
-		assertEquals(game.score(), 15);
+		for(int i=0;i<10;i++) {
+			game.roll(3);
+		}
+		for(int i=0;i<10;i++) {
+			game.roll(7);
+		}
+		assertEquals(game.score(), 100);
 	}
 }
