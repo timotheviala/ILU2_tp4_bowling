@@ -5,21 +5,21 @@ public class Game {
 	private int tour=0;
 	
 	private boolean spareBefore() {
-		return (tableauScore[tour-1]+tableauScore[tour-2]==10) && tableauScore[tour-2]!=10;
+		return tour%2==0 && (tableauScore[tour-1]+tableauScore[tour-2]==10) && tableauScore[tour-2]!=10;
 	}
 	
 	private boolean strikeBefore() {
-		return tableauScore[tour-3]==10;
+		return tour%2!=0 && tableauScore[tour-3]==10;
 	}
 	
 	void roll(int points) {
 		tableauScore[tour]=points;
-		if(tour>1 && tour%2==0 && spareBefore()) {
-			tableauScore[tour-1]+=points;
-		}else if(tour>1 && tour%2!=0 && strikeBefore()) {
-			tableauScore[tour-3]+=tableauScore[tour];
-			tableauScore[tour-3]+=tableauScore[tour-1];
-
+		if(tour>1) {
+			if(spareBefore()) {
+				tableauScore[tour-1]+=points;
+			}else if(strikeBefore()) {
+				tableauScore[tour-3]+=tableauScore[tour]+tableauScore[tour-1];
+			}
 		}
 		if(points==10) {
 			tour++;
