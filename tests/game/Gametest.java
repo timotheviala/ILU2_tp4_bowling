@@ -32,4 +32,12 @@ public class Gametest {
 		}
 		assertEquals(game.score(), 20);
 	}
+	
+	@Test
+	void testDifferentsLancers() {
+		game.roll(6);
+		game.roll(7);
+		game.roll(2);
+		assertEquals(game.score(), 15);
+	}
 }
