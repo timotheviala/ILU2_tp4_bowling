@@ -65,4 +65,28 @@ public class Gametest {
 		}
 		assertEquals(game.score(),24);
 	}
+	
+	@Test
+	void testRandomGame() {
+		game.roll(1);
+		game.roll(2);
+		game.roll(10);
+		game.roll(0);
+		game.roll(10);
+		game.roll(4);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(4);
+		game.roll(8);
+		game.roll(2);
+		game.roll(2);
+		game.roll(7);
+		assertEquals(game.score(), 122);
+	}
 }

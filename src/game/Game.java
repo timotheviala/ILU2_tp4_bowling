@@ -21,7 +21,7 @@ public class Game {
 				tableauScore[tour-3]+=tableauScore[tour]+tableauScore[tour-1];
 			}
 		}
-		if(points==10) {
+		if(points==10 && tour%2==0) {
 			tour++;
 		}
 		tour++;
