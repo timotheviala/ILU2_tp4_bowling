@@ -114,4 +114,13 @@ public class Gametest {
 		game.roll(8);
 		assertEquals(game.score(), 131);
 	}
+	
+	void testStrikeDernier() {
+		for(int i=0;i<18;i++) {
+			game.roll(1);
+		}
+		game.roll(10);
+		game.roll(3);
+		assertEquals(game.score(),31);
+	}
 }
