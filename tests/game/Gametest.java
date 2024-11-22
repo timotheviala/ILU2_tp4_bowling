@@ -89,4 +89,29 @@ public class Gametest {
 		game.roll(7);
 		assertEquals(game.score(), 122);
 	}
+	
+	@Test
+	void testSpareDernier() {
+		game.roll(1);
+		game.roll(2);
+		game.roll(10);
+		game.roll(0);
+		game.roll(10);
+		game.roll(4);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(4);
+		game.roll(8);
+		game.roll(2);
+		game.roll(2);
+		game.roll(8);
+		game.roll(8);
+		assertEquals(game.score(), 131);
+	}
 }
