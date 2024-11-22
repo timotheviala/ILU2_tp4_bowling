@@ -8,10 +8,19 @@ public class Game {
 		return tableauScore[tour-1]+tableauScore[tour-2]==10;
 	}
 	
+	private boolean strikeBefore() {
+		return tableauScore[tour-3]==10;
+	}
+	
 	void roll(int points) {
 		tableauScore[tour]=points;
 		if(tour>1 && tour%2==0 && this.spareBefore()) {
 			tableauScore[tour-1]+=points;
+		}else if(tour>1 && tour%2!=0 && this.strikeBefore()) {
+			tableauScore[tour-2]+=tableauScore[tour]+tableauScore[tour-1];
+		}
+		if(points==10) {
+			tour++;
 		}
 		tour++;
 	}
