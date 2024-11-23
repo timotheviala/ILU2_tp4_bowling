@@ -123,4 +123,11 @@ public class Gametest {
 		game.roll(3);
 		assertEquals(game.score(),31);
 	}
+	
+	void testStrikeUniquement() {
+		for(int i=0;i<11;i++) {
+			game.roll(10);		
+		}
+		assertEquals(game.score(), 300);
+	}
 }
